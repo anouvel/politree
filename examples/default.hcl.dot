@@ -1,0 +1,187 @@
+digraph RGL__DirectedAdjacencyGraph {
+    "/auth" [
+        fontsize = 8,
+        label = "/auth"
+    ]
+
+    "/auth/token" [
+        fontsize = 8,
+        label = "/auth/token"
+    ]
+
+    "/auth/token/lookup-self" [
+        fontsize = 8,
+        label = "/auth/token/lookup-self"
+    ]
+
+    "/auth/token/renew-self" [
+        fontsize = 8,
+        label = "/auth/token/renew-self"
+    ]
+
+    "/auth/token/revoke-self" [
+        fontsize = 8,
+        label = "/auth/token/revoke-self"
+    ]
+
+    "/sys" [
+        fontsize = 8,
+        label = "/sys"
+    ]
+
+    "/sys/capabilities-self" [
+        fontsize = 8,
+        label = "/sys/capabilities-self"
+    ]
+
+    "/sys/renew" [
+        fontsize = 8,
+        label = "/sys/renew"
+    ]
+
+    "/sys/leases" [
+        fontsize = 8,
+        label = "/sys/leases"
+    ]
+
+    "/sys/leases/renew" [
+        fontsize = 8,
+        label = "/sys/leases/renew"
+    ]
+
+    "/sys/leases/lookup" [
+        fontsize = 8,
+        label = "/sys/leases/lookup"
+    ]
+
+    "/cubbyhole" [
+        fontsize = 8,
+        label = "/cubbyhole"
+    ]
+
+    "/cubbyhole/*" [
+        fontsize = 8,
+        label = "/cubbyhole/*"
+    ]
+
+    "/sys/wrapping" [
+        fontsize = 8,
+        label = "/sys/wrapping"
+    ]
+
+    "/sys/wrapping/wrap" [
+        fontsize = 8,
+        label = "/sys/wrapping/wrap"
+    ]
+
+    "/sys/wrapping/lookup" [
+        fontsize = 8,
+        label = "/sys/wrapping/lookup"
+    ]
+
+    "/sys/wrapping/unwrap" [
+        fontsize = 8,
+        label = "/sys/wrapping/unwrap"
+    ]
+
+    "/sys/tools" [
+        fontsize = 8,
+        label = "/sys/tools"
+    ]
+
+    "/sys/tools/hash" [
+        fontsize = 8,
+        label = "/sys/tools/hash"
+    ]
+
+    "/sys/tools/hash/*" [
+        fontsize = 8,
+        label = "/sys/tools/hash/*"
+    ]
+
+    "/sys/tools/random" [
+        fontsize = 8,
+        label = "/sys/tools/random"
+    ]
+
+    "/sys/tools/random/*" [
+        fontsize = 8,
+        label = "/sys/tools/random/*"
+    ]
+
+    "/auth" -> "/auth/token" [
+        fontsize = 8
+    ]
+
+    "/auth/token" -> "/auth/token/lookup-self" [
+        fontsize = 8
+    ]
+
+    "/auth/token" -> "/auth/token/renew-self" [
+        fontsize = 8
+    ]
+
+    "/auth/token" -> "/auth/token/revoke-self" [
+        fontsize = 8
+    ]
+
+    "/sys" -> "/sys/capabilities-self" [
+        fontsize = 8
+    ]
+
+    "/sys" -> "/sys/renew" [
+        fontsize = 8
+    ]
+
+    "/sys" -> "/sys/leases" [
+        fontsize = 8
+    ]
+
+    "/sys" -> "/sys/wrapping" [
+        fontsize = 8
+    ]
+
+    "/sys" -> "/sys/tools" [
+        fontsize = 8
+    ]
+
+    "/sys/leases" -> "/sys/leases/renew" [
+        fontsize = 8
+    ]
+
+    "/sys/leases" -> "/sys/leases/lookup" [
+        fontsize = 8
+    ]
+
+    "/cubbyhole" -> "/cubbyhole/*" [
+        fontsize = 8
+    ]
+
+    "/sys/wrapping" -> "/sys/wrapping/wrap" [
+        fontsize = 8
+    ]
+
+    "/sys/wrapping" -> "/sys/wrapping/lookup" [
+        fontsize = 8
+    ]
+
+    "/sys/wrapping" -> "/sys/wrapping/unwrap" [
+        fontsize = 8
+    ]
+
+    "/sys/tools" -> "/sys/tools/hash" [
+        fontsize = 8
+    ]
+
+    "/sys/tools" -> "/sys/tools/random" [
+        fontsize = 8
+    ]
+
+    "/sys/tools/hash" -> "/sys/tools/hash/*" [
+        fontsize = 8
+    ]
+
+    "/sys/tools/random" -> "/sys/tools/random/*" [
+        fontsize = 8
+    ]
+}

@@ -1,6 +1,6 @@
 # Politree
 
-A project to generate a tree with some **HCL** Vault policies files.
+A Ruby gem to generate a tree view of your **HCL** Vault policies files.
 
 > This project is really in an earlier development phase, please feel free to
 > contribute, share or submit your ideas!

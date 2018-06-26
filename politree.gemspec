@@ -6,12 +6,12 @@ require "politree/version"
 Gem::Specification.new do |spec|
   spec.name          = "politree"
   spec.version       = Politree::VERSION
-  spec.authors       = ["Clement Hussenot"]
+  spec.authors       = ["Clement Hussenot","Adrien Nouvel"]
   spec.email         = ["chussenota@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A Ruby gem to generate a tree view of your HCL Vault policies files.}
+  spec.description   = %q{A Ruby gem to generate a tree view of your HCL Vault policies files.}
+  spec.homepage      = "https://github.com/anouvel/vault_tree_generator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -35,4 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_dependency "rhcl"
+  spec.add_dependency "rgl"
+  spec.add_dependency "thor"
 end

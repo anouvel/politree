@@ -2,6 +2,8 @@
 
 A Ruby gem to generate a tree view of your **HCL** Vault policies files.
 
+[![Gem Version](https://badge.fury.io/rb/politree.svg)](https://badge.fury.io/rb/politree)
+
 > This project is really in an earlier development phase, please feel free to
 > contribute, share or submit your ideas!
 

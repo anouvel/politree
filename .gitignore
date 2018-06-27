@@ -1,3 +1,14 @@
+#
+# Common ignoring files.
+#
+
+tmp/*
+!.git-keep
+
+#
+# Ruby gem 
+#
+
 /.bundle/
 /.yardoc
 /_yardoc/
@@ -10,9 +21,4 @@
 # rspec failure tracking
 .rspec_status
 
-#
-# Common ignoring files.
-#
 
-tmp/*
-!.git-keep

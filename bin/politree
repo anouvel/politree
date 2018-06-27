@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'rgl/adjacency'
+require 'rgl/dot'
+require 'rhcl'
+
+module PoliTree
+  class CLI < Thor
+    desc 'generate FILE', 'This will generate a tree view'
+    long_desc <<-DESC
+      `generate FILE` will generate a tree view of your HCL vault policies.
+      https://github.com/anouvel/vault_tree_generator
+      DESC
+    option :filename
+    option :format
+    def generate(filename, format=nil)
+      format ||= 'jpg'
+      result = RGL::DirectedAdjacencyGraph.new
+      begin
+        src_hcl = Rhcl.parse(open(filename).read)
+      rescue Exception => e
+        puts "Please check your input file, must use HCL syntax: #{e.message}"
+        exit
+      end
+      for policy in src_hcl do
+        all_path = policy[1]
+        for path in all_path do
+          tmp_path = ''
+          s_path = path[0].split('/')
+          s_path.each_with_index do |_item, index|
+            tmp_path = tmp_path + '/' + s_path[index]
+            result.add_vertex tmp_path
+            result.add_edge tmp_path.rpartition('/')[0], tmp_path if index > 0
+          end
+        end
+      end
+      result.write_to_graphic_file(fmt = format, dotfile = filename)
+    end
+end
+end
+
+PoliTree::CLI.start(ARGV)

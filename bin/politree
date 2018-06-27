@@ -13,9 +13,16 @@ module PoliTree
       https://github.com/anouvel/vault_tree_generator
       DESC
     option :filename
-    def generate(filename)
+    option :format
+    def generate(filename, format=nil)
+      format ||= 'jpg'
       result = RGL::DirectedAdjacencyGraph.new
-      src_hcl = Rhcl.parse(open(filename).read)
+      begin
+        src_hcl = Rhcl.parse(open(filename).read)
+      rescue Exception => e
+        puts "Please check your input file, must use HCL syntax: #{e.message}"
+        exit
+      end
       for policy in src_hcl do
         all_path = policy[1]
         for path in all_path do
@@ -28,7 +35,7 @@ module PoliTree
           end
         end
       end
-      result.write_to_graphic_file(fmt = 'jpg', dotfile = filename)
+      result.write_to_graphic_file(fmt = format, dotfile = filename)
     end
 end
 end

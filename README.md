@@ -106,6 +106,11 @@ EOL
 $ politree generate example.hcl
 ```
 
+And get a nice picture of your paths!
+
+  ![exemple](exemples/default.hcl.jpg)
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then,

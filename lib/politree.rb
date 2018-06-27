@@ -1,4 +1,4 @@
-require "politree/version"
+require 'politree/version'
 
 module Politree
 end
